@@ -3,9 +3,49 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    border: solid #2A75BB;
+    border-radius: 10px;
+    border-width: 5px;
+    width: 15rem;
+    background-color: #f4c921
   }
 
   .jumbotron{
       display: flex;
       justify-content: center;
+  }
+
+  .display-4 {
+      text-align: center;
+  }
+
+  .lead{
+      text-align: center;
+  }
+
+  .search-container{
+      padding: 10px
+  }
+
+  .searchbar-container{
+      display: flex;
+      flex-direction: column;
+  }
+
+  .search-button{
+      font-size: smaller;
+      width: 100%;
+  }
+
+  .form-label{
+      margin-left: 5px;
+  }
+
+  .form-control{
+      margin-left: 5px;
+  }
+
+  .form-select{
+      margin-left: 15px;
+      margin-bottom: 10px;
   }
