@@ -6,13 +6,14 @@
     border: solid #2A75BB;
     border-radius: 10px;
     border-width: 5px;
-    width: 15rem;
+    width: 18rem;
     background-color: #f4c921
   }
 
   .jumbotron{
       display: flex;
       justify-content: center;
+      background-color: #3C5AA6;
   }
 
   .display-4 {
@@ -21,6 +22,7 @@
 
   .lead{
       text-align: center;
+      color: #f4c921;
   }
 
   .search-container{
@@ -29,23 +31,44 @@
 
   .searchbar-container{
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
   }
 
   .search-button{
       font-size: smaller;
-      width: 100%;
+      
   }
 
   .form-label{
       margin-left: 5px;
+      color: #2A75BB;
+      font-weight: bold;
+      padding: 2px;
+
   }
 
   .form-control{
       margin-left: 5px;
+      height: 3rem
   }
 
   .form-select{
       margin-left: 15px;
       margin-bottom: 10px;
+  }
+
+.footer-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+  footer {
+    width: 100%;
+    bottom: 0;
+    padding: 25px;
+    text-align: center;
+    background: #3C5AA6;
+    color: #f4c921;
+    margin-top: 48px;
   }
