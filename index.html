@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PokeDex</title>
-
+    
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
 </head>
@@ -12,31 +12,65 @@
     <div>
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
-              <h1 class="display-4">Fluid jumbotron</h1>
-              <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+              <h1 class="display-4"><a href="https://fontmeme.com/pokemon-font/"><img src="https://fontmeme.com/permalink/210402/657d0c4b843a08f84725f655b7ced1b6.png" alt="pokemon-font"></a></h1>
+              <p class="lead">A PokeDex for all your competitive gaming needs!</p>
             </div>
           </div>
     </div>
-
+<main class="main-container">
     <div class="sidebar-container">
         <aside>
-            <div>
-            <label for="exampleDataList" class="form-label">Search:</label>
-            <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
-            
+            <div class="search-container">
+                <label for="exampleDataList" class="form-label">Search:</label>
+                <div class="searchbar-container">
+                <input class="form-control" placeholder="Type to search...">
+                <button class="search-button">Catch'em All!</button>
+                </div>
             </div>
             <div>
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                <select class="form-select" id="select-box">
+                    <option selected>Choose a parameter.</option>
+                    <option data-value="pokemon">pokemon</option>
+                    <option data-value="type">type</option>
+                    <option data-value="move">moves</option>
+                    <option data-value="ability">ability</option>
                   </select>
             </div>
         </aside>
     </div>
+    <div class="results-container">
+        <h2 class="search-title">Results:<span class="search-input"></span></h2>
+        <div class="search-results">
+        </div>
+    </div>
+</main>
 
-    
+    <div class="modal" id="myModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Error!</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="footer-container">
+        <footer>
+            This site was made with love by <a href="https://github.com/beau4ta" alt="beau4ta">Beau</a>, <a href="https://github.com/AYYLAM0" alt="AYYLAM0" > Dan</a>,  <a href="https://github.com/Kamille-Y" alt="Kamille-Y">Kamille</a> and  <a href="https://github.com/Robert100-Case" alt="Robert100-Case">Robert</a> using these lovely APIs <a href="https://pokeapi.co/" alt="pokeapi">PokeAPI</a> and <a href="https://weatherstack.com/" alt="Weatherstack">WeatherStack</a>
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

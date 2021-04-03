@@ -1,11 +1,97 @@
-.sidebar-container{
-    width:100%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-  }
 
   .jumbotron{
       display: flex;
       justify-content: center;
+      align-items: center;
+      background-color: #3C5AA6;
+  }
+
+  .display-4 {
+    padding: 5px;
+    text-align: center;
+  }
+
+  .lead{
+      text-align: center;
+      color: #f4c921;
+  }
+
+  .main-container{
+      display: flex;
+  }
+
+  .sidebar-container{
+    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    border: solid #2A75BB;
+    border-radius: 10px;
+    border-width: 5px;
+    width: 18rem;
+    background-color: #f4c921
+  }
+
+  .search-container{
+      padding: 10px
+  }
+
+  .searchbar-container{
+      display: flex;
+      flex-direction: row;
+  }
+
+  .search-button{
+      font-size: smaller;
+  }
+
+  .form-label{
+      margin-left: 5px;
+      color: #2A75BB;
+      font-weight: bold;
+      padding: 2px;
+  }
+
+  .form-control{
+      margin-left: 5px;
+      height: 3rem
+  }
+
+  .form-select{
+      margin-left: 15px;
+      margin-bottom: 10px;
+  }
+
+  .results-container{
+      display: flex;
+      flex-direction: column;
+  }
+
+.search-title{
+    margin-left: 20px;
+}
+
+.search-results{
+    display: flex;
+    flex-wrap: wrap;
+      padding: 10px;
+      margin-left: 20px;
+      border: solid;
+    
+  }
+
+.footer-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+  footer {
+    width: 100%;
+    bottom: 0;
+    padding: 25px;
+    text-align: center;
+    background: #3C5AA6;
+    color: #f4c921;
+    margin-top: 48px;
   }
