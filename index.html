@@ -17,7 +17,7 @@
             </div>
           </div>
     </div>
-
+<main class="main-container">
     <div class="sidebar-container">
         <aside>
             <div class="search-container">
@@ -28,18 +28,24 @@
                 </div>
             </div>
             <div>
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Select</option>
-                    <option value="1">Type</option>
-                    <option value="2">Species</option>
-                    <option value="3">Moves</option>
-                    <option value="4">Ability</option>
+                <select class="form-select" id="select-box">
+                    <option selected>Choose a parameter.</option>
+                    <option data-value="pokemon">pokemon</option>
+                    <option data-value="type">type</option>
+                    <option data-value="move">moves</option>
+                    <option data-value="ability">ability</option>
                   </select>
             </div>
         </aside>
     </div>
+    <div class="results-container">
+        <h2 class="search-title">Results:<span class="search-input"></span></h2>
+        <div class="search-results">
+        </div>
+    </div>
+</main>
 
-    <div class="modal" tabindex="-1" role="dialog">
+    <div class="modal" id="myModal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -63,8 +69,8 @@
         </footer>
     </div>
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
