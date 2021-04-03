@@ -79,6 +79,10 @@
     
   }
 
+  .type-header{
+      border: solid;
+  }
+
 .footer-container{
     display: flex;
     flex-direction: column;

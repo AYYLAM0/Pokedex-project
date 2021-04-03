@@ -45,24 +45,31 @@ function getResults(data, search, selectBoxValue) {
 
         var listResult = document.createElement("div");
         var resultBody = document.createElement("div");
-        resultBody.append(resultTitle, bodyInfo, resultLink);
-        resultsContainer.append(listResult);
-    
+      
         listResult.append(resultBody);
     
         var resultTitle = document.createElement("h2");
         var bodyInfo = document.createElement("p");
-        var resultLink = document.createElement("a");
+        var bodyInfo2 = document.createElement("p");
+        var bodyInfo3 = document.createElement("p");
+        var resultBtn = document.createElement("button");
         
-        resultLink.textContent = "Click for picture.";
+        resultBtn.textContent = "Click for more info.";
+        
 
         if (selectBoxValue === "pokemon") {
-            var pokeImg = document.createElement("img")
-        pokeImg.src = data.sprites.other['official-artwork'].front_default
-        resultTitle.textContent = JSON.stringify(data.name);
-        bodyInfo.textContent = JSON.stringify(data.sprites.other["official-artwork"]);
-        resultLink.href = data.sprites.other["official-artwork"].front_default;
-        resultsContainer.append(pokeImg)
+            
+            var pokeImg = document.createElement("img");
+        pokeImg.src = data.sprites.other['official-artwork'].front_default;
+        resultTitle.textContent = "Name: " + data.name;
+        bodyInfo.textContent = "Type: " + data.types[0].type.name;
+        if (data.types[1]) {
+            bodyInfo.textContent = "Type: " + data.types[0].type.name + "/ " + data.types[1].type.name;
+        } 
+        bodyInfo2.textContent = "Height: " + data.height + " ft"
+        bodyInfo3.textContent = "Weight: " + data.weight + " lbs"
+        
+        resultsContainer.append(pokeImg);
 
         } else if (selectBoxValue === "type") {
             for (var i = 0; i < data.pokemon.length; i++) {
@@ -72,23 +79,28 @@ function getResults(data, search, selectBoxValue) {
                 resultsContainer.append(pokemonH1)
                 pokemonH1.setAttribute("class", "type-header")
             }
-            resultLink.href = data
+            
             resultTitle.textContent = JSON.stringify(data);
             bodyInfo.textContent = JSON.stringify(data);
 
-        } else if (selectBoxValue === "moves") {
-            resultLink.href = data
-            resultTitle.textContent = JSON.stringify(data);
-            bodyInfo.textContent = JSON.stringify(data);
+        } else if (selectBoxValue === "move") {
+            
+            resultTitle.textContent = data.name;
+            bodyInfo.textContent = "BP " + data.power;
 
         } else if (selectBoxValue === "abilities") {
-            resultLink.href = data
+           
             resultTitle.textContent = JSON.stringify(data);
             bodyInfo.textContent = JSON.stringify(data);
         }
+        resultBody.append(resultTitle, bodyInfo, bodyInfo2);
+        resultsContainer.append(listResult);
     }
     
-        
+function showModal(){
+    $('#myModal').modal("show");
+    $(".modal-body").
+}  
     
 
 
