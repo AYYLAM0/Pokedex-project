@@ -72,7 +72,6 @@
 }
 
 .search-results{
-    display: flex;
     flex-wrap: wrap;
       padding: 10px;
       margin-left: 20px;

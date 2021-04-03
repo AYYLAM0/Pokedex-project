@@ -37,34 +37,59 @@ function getPokeData(searchInputValue, selectBoxValue) {
         })
     }
 
-function getResults(data, search) {
+function getResults(data, search, selectBoxValue) {
 
-    var searchResults = [];
-    searchResults.push(data);
-
-    searchInput.textContent = search;
-
-    searchResults.forEach(function (){
+    // searchInput.textContent = search;
+    console.log(data.length);
+    console.log(data);
 
         var listResult = document.createElement("div");
         var resultBody = document.createElement("div");
+        resultBody.append(resultTitle, bodyInfo, resultLink);
+        resultsContainer.append(listResult);
     
         listResult.append(resultBody);
     
         var resultTitle = document.createElement("h2");
-        resultTitle.textContent = JSON.stringify(data.name);
-    
         var bodyInfo = document.createElement("p");
-        bodyInfo.textContent = JSON.stringify(data);
-    
         var resultLink = document.createElement("a");
-        resultLink.textContent = "Click for more info.";
-        // resultLink.href = data.species.url
+        
+        resultLink.textContent = "Click for picture.";
+
+        if (selectBoxValue === "pokemon") {
+            var pokeImg = document.createElement("img")
+        pokeImg.src = data.sprites.other['official-artwork'].front_default
+        resultTitle.textContent = JSON.stringify(data.name);
+        bodyInfo.textContent = JSON.stringify(data.sprites.other["official-artwork"]);
+        resultLink.href = data.sprites.other["official-artwork"].front_default;
+        resultsContainer.append(pokeImg)
+
+        } else if (selectBoxValue === "type") {
+            for (var i = 0; i < data.pokemon.length; i++) {
+
+                var pokemonH1 = document.createElement("h1")
+                pokemonH1.textContent = data.pokemon[i].pokemon.name;
+                resultsContainer.append(pokemonH1)
+                pokemonH1.setAttribute("class", "type-header")
+            }
+            resultLink.href = data
+            resultTitle.textContent = JSON.stringify(data);
+            bodyInfo.textContent = JSON.stringify(data);
+
+        } else if (selectBoxValue === "moves") {
+            resultLink.href = data
+            resultTitle.textContent = JSON.stringify(data);
+            bodyInfo.textContent = JSON.stringify(data);
+
+        } else if (selectBoxValue === "abilities") {
+            resultLink.href = data
+            resultTitle.textContent = JSON.stringify(data);
+            bodyInfo.textContent = JSON.stringify(data);
+        }
+    }
     
-        resultBody.append(resultTitle, bodyInfo, resultLink);
+        
     
-        resultsContainer.append(listResult);
-    })
-}
+
 
 $(".search-button").click(formSearch);
