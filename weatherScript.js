@@ -1,9 +1,10 @@
 function weatherCall(){
 
   var noCityUrl = 'http://api.weatherapi.com/v1/forecast.json?key=695952c7d92b4120b1b141701210304&days=4&aqi=no&alerts=no';
-  var searchCity =document.getElementById ("searchId").value;
-  var searchUrl=noCityUrl + "&q=" + searchCity ;
+  var searchCity = document.getElementById("searchId").value;
+  var searchUrl = noCityUrl + "&q=" + searchCity ;
   
+  console.log(searchCity)
 
 var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
@@ -12,8 +13,8 @@ xmlhttp.onreadystatechange = function() {
     console.log('XMLHttpRequest Response \n-------------');
     console.log(xmlhttp.response);
   
-    var myObj = JSON.parse(this.responseText);
-   
+    var myObj = JSON.parse(this.responseText); 
+
    var tempOutput="Temperature: " + myObj.current.temp_f + " ○F"; 
    document.getElementById("tempField").innerHTML = tempOutput;
    var conditionOutput ="Condition: " + myObj.current.condition.text; 
