@@ -99,6 +99,17 @@ function getResults(data, search, selectBoxValue) {
         }
 
     } else if (selectBoxValue === "move") {
+           function showModal() {
+
+        $('#myModal').modal("show");
+        $(".modal-title") .text(data.name)
+        $(".modal-li-1") .text("Accuracy: " + data.accuracy)
+        $(".modal-li-2").text("PP: " + data.pp)
+        $(".modal-li-3").text("Power: " + data.power)
+        $(".modal-li-4").text("Type: " + data.type.name)
+        $(".modal-li-5").text("Priority: " + data.priority)
+       
+    }
         
         resultTitle.textContent = data.name
         
@@ -112,6 +123,14 @@ function getResults(data, search, selectBoxValue) {
 
 
     } else if (selectBoxValue === "ability") {
+       
+        function showModal() {
+
+            $('#myModal').modal("moves");
+            $(".modal-title").text(data.name)
+            $(".modal-img").attr('src', data.sprites.other['official-artwork'].front_default);
+            $(".modal-body").text("Type: " + data.types[0].type.name)
+        }
         
         resultTitle.textContent = data.name
 
