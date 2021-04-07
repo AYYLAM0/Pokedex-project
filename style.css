@@ -43,6 +43,12 @@
 
   .search-button{
       font-size: smaller;
+      background-color: #2A75BB;
+      color: #f4c921;
+  }
+
+  .search-button:hover {
+      background-color: #144879;;
   }
 
   .form-label{
@@ -62,6 +68,10 @@
       margin-bottom: 10px;
   }
 
+  .weather-results{
+      padding: 10px;
+  }
+
   .results-container{
       display: flex;
       flex-direction: column;
@@ -78,8 +88,8 @@
     
   }
 
-  .type-header{
-      border: solid;
+.type-header{
+    border: solid;
   }
 
 .footer-container{
@@ -97,7 +107,25 @@
     color: #f4c921;
     margin-top: 48px;
   }
-  li    {
-      font-size: 20px
-      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+  li{
+    font-size: 20px;
+    color: #2A75BB;
+  }
+
+  .modal-title{
+      color: #f4c921;
+  }
+
+  .modal-content{
+      background-color: #3C5AA6;
+  }
+
+
+  .modal-li-1,
+  .modal-li-2,
+  .modal-li-3,
+  .modal-li-4,
+  .modal-li-5 {
+      color: #f4c921;
   }
