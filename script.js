@@ -41,7 +41,7 @@ function getPokeData(searchInputValue, selectBoxValue) {
 
 function getResults(data, search, selectBoxValue) {
 
-    // searchInput.textContent = search;
+    searchInput.textContent = search;
     console.log(data.length);
     console.log(data);
 
