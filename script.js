@@ -140,22 +140,31 @@ function weatherCall(){
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      
-      console.log('XMLHttpRequest Response \n-------------');
-      console.log(xmlhttp.response);
     
       var myObj = JSON.parse(this.responseText); 
+      console.log(myObj);
   
-     var tempOutput="Temperature: " + myObj.current.temp_f + " ○F"; 
+     var tempOutput="Temperature: " + myObj.current.temp_f + " °F"; 
      document.getElementById("tempField").innerHTML = tempOutput;
      var conditionOutput ="Condition: " + myObj.current.condition.text; 
      document.getElementById("conditionField").innerHTML = conditionOutput;
-     var conditionOutput ="Tomorrow High: " + myObj.forecast.forecastday[0].day.maxtemp_f; 
-     document.getElementById("tomorrowHigh").innerHTML = conditionOutput + " ○F";
-     var conditionOutput ="Tomorrow Low: " + myObj.forecast.forecastday[0].day.mintemp_f; 
-     document.getElementById("tomorrowLow").innerHTML = conditionOutput + " ○F";
-     var conditionOutput ="Tomorrow Condition: " + myObj.forecast.forecastday[0].day.condition.text; 
-     document.getElementById("tomorrowCondition").innerHTML = conditionOutput;
+    
+
+     if (myObj.current.condition.text === "Sunny" || "Clear") {
+         $(".poke-condition").text("Type Available: Fire, Flying, Bug, Grass, Fighting, and Ground")
+     }
+     if (myObj.current.condition.text === "Mist" || "Overcast" || "Cloudy" || "Partly cloudy" || "Fog") {
+         $(".poke-condition").text("Type Available: Psychic, Fairy, Ghost, Poison, and Dark")
+     }
+     if (myObj.current.condition.text === "Blizzard" || "Moderate snow") {
+         $(".poke-condition").text("Type Available: Ice, Steel, and Rock")
+     }
+     if (myObj.current.condition.text === "Moderate rain" || "Light rain" || "Heavy rain") {
+         $(".poke-condition").text("Type Available: Water, and Electric")
+     }
+     if (myObj.current.condition.text === "Thundery outbreaks possible") {
+         $(".poke-condition").text("Type Available: Electric, Water, and Dragon")
+     }
 
     }
   };
