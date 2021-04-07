@@ -66,7 +66,11 @@ function getResults(data, search, selectBoxValue) {
             $('#myModal').modal("show");
             $(".modal-title").text(data.name)
             $(".modal-img").attr('src', data.sprites.other['official-artwork'].front_default);
-            $(".modal-body").text("Type: " + data.types[0].type.name)
+            $(".modal-li-1").text("Type: " + data.types[0].type.name)
+            $(".modal-li-2").text("Abilities: " + data.abilities[0].ability.name + "/" + data.abilities[1].ability.name)
+            $(".modal-li-3").text("Stats: " + "HP: " + data.stats[0].base_stat + " ATK: " + data.stats[1].base_stat + " DEF: " + data.stats[2].base_stat + " SP. ATK: " + data.stats[3].base_stat + " SP. DEF: " + data.stats[4].base_stat + " SPD: " + data.stats[5].base_stat)
+            $(".modal-li-4").text("Base XP: " + data.base_experience);
+            $(".modal-li-5").text("Height: " + data.height + " ft " + "Weight: " + data.weight + " lbs")
         }
 
 
@@ -124,6 +128,46 @@ function getResults(data, search, selectBoxValue) {
 
     resultBtn.addEventListener("click", showModal);
 }
+
+function weatherCall(){
+
+    var noCityUrl = 'http://api.weatherapi.com/v1/forecast.json?key=695952c7d92b4120b1b141701210304&days=4&aqi=no&alerts=no';
+    var searchCity = document.getElementById("searchId").value;
+    var searchUrl = noCityUrl + "&q=" + searchCity ;
+    
+    console.log(searchCity)
+  
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      
+      console.log('XMLHttpRequest Response \n-------------');
+      console.log(xmlhttp.response);
+    
+      var myObj = JSON.parse(this.responseText); 
+  
+     var tempOutput="Temperature: " + myObj.current.temp_f + " ○F"; 
+     document.getElementById("tempField").innerHTML = tempOutput;
+     var conditionOutput ="Condition: " + myObj.current.condition.text; 
+     document.getElementById("conditionField").innerHTML = conditionOutput;
+     var conditionOutput ="Tomorrow High: " + myObj.forecast.forecastday[0].day.maxtemp_f; 
+     document.getElementById("tomorrowHigh").innerHTML = conditionOutput + " ○F";
+     var conditionOutput ="Tomorrow Low: " + myObj.forecast.forecastday[0].day.mintemp_f; 
+     document.getElementById("tomorrowLow").innerHTML = conditionOutput + " ○F";
+     var conditionOutput ="Tomorrow Condition: " + myObj.forecast.forecastday[0].day.condition.text; 
+     document.getElementById("tomorrowCondition").innerHTML = conditionOutput;
+
+    }
+  };
+  
+  xmlhttp.open("GET", searchUrl, true);
+  xmlhttp.send();
+  }
+    
+  
+  $('button').click(function() {
+  weatherCall();
+  });
 
 
 $(".search-button").click(formSearch);

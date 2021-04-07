@@ -43,6 +43,12 @@
 
   .search-button{
       font-size: smaller;
+      background-color: #2A75BB;
+      color: #f4c921;
+  }
+
+  .search-button:hover {
+      background-color: #144879;;
   }
 
   .form-label{
@@ -60,6 +66,10 @@
   .form-select{
       margin-left: 15px;
       margin-bottom: 10px;
+  }
+
+  .weather-results{
+      padding: 10px;
   }
 
   .results-container{
@@ -97,7 +107,7 @@
     color: #f4c921;
     margin-top: 48px;
   }
-  li    {
-      font-size: 20px
-      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  li{
+    font-size: 20px;
+    color: #2A75BB;
   }
