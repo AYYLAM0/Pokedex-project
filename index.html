@@ -35,7 +35,7 @@
                     <option data-value="move">move</option>
                     <option data-value="ability">ability</option>
                   </select>
-                <div class= "sbInstructions" >  
+                <divs>  
                 <ul>
                      <li> If pokemon is selected enter pokemon name.</li>   
                     <li>If type is selected enter type name.</li>
@@ -43,16 +43,26 @@
                      <li> If ability is selected enter the ability name.</li>
                      
                </ul>
-              <div> For example: pokemon selected. Enter it's name: pikachu</div>
+              <div> <div id="example"> 
+                <ul class=form-lable>Examples:
+                  <li> Pokemon Selected. Enter it's name: mr-mime</li>
+                  <li> Move Selected. Enter move name: fire-blast</li>
+                  <li> Ability Selected. Enter ability name: inner-focus</li>
+                  <li> Type Selected. Enter Pokemon type: flying </li>
+                  
+
+                </ul> 
+              </div>
                     
             </div>
 
             <div class="weather-results">
-              <b><label for="last-name">Search for a City:</label></b><br>
+              <b class="form-label"><label for="last-name">Search City's Weather:</label></b><br>
               <input type="text" class="form-input" name="last-name" id="searchId" />
-               <button  id="mainSearch">Search</button><br><br>
-               <p id="tempField"></p><br>
-               <p id="conditionField"></p><br>
+
+               <button  class=search-button>Search</button><br><br>
+               <p id="tempField" > </p><br>
+               <p id="conditionField" > </p><br>
                <p class="poke-condition"></p>   
 
             </div>

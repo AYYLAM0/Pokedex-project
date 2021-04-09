@@ -53,7 +53,7 @@
 
   .form-label{
       margin-left: 5px;
-      color: #2A75BB;
+      color: #ff0000;
       font-weight: bold;
       padding: 2px;
   }
@@ -111,6 +111,11 @@
   li{
     font-size: 20px;
     color: #2A75BB;
+    font-weight: 480;
+  }
+  #example{
+      font-weight: bold;
+      color: #ff0000;
   }
 
   .modal{
