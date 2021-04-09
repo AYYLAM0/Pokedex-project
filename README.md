@@ -20,6 +20,6 @@ GitHub Repo: https://github.com/AYYLAM0/Pokedex-project
 
 Live Website: https://ayylam0.github.io/Pokedex-project/
 
-<img href="pokedex1.png">
-<img href="pokedex2.png">
+<img src="pokedex1.png">
+<img src="pokedex2.png">
 
