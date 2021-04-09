@@ -68,6 +68,7 @@ function getResults(data, search, selectBoxValue) {
     var bodyInfo2 = document.createElement("p");
     var bodyInfo3 = document.createElement("p");
     var resultBtn = document.createElement("button");
+    resultBtn.setAttribute("class", "infoBtn")
 
     resultBtn.textContent = "Click for more info.";
 
