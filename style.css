@@ -1,3 +1,7 @@
+.body {
+    background-color: #3C5AA6;
+}
+
 
   .jumbotron{
       display: flex;
@@ -48,8 +52,20 @@
   }
 
   .search-button:hover {
-      background-color: #144879;;
+    background-color: #144879;
+    transform: scale(1.02);
+}
+
+  .weather-button{
+    font-size: smaller;
+    background-color: #2A75BB;
+    color: #f4c921;
   }
+
+  .weather-button:hover{
+    background-color: #144879;
+    transform: scale(1.02);
+}
 
   .form-label{
       margin-left: 5px;
@@ -69,9 +85,11 @@
   }
 
   .weather-results{
-      padding: 10px;
-      color: #144879;
+      padding: 5px;
+      font-size: 20px;
+      color: #2A75BB;
       font-weight: 480;
+      margin-left: 20px;
   }
 
   .results-container{
