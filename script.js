@@ -179,7 +179,7 @@ function getResults(data, search, selectBoxValue) {
 //function to call weather api
 function weatherCall(){
 
-    var noCityUrl = 'http://api.weatherapi.com/v1/forecast.json?key=695952c7d92b4120b1b141701210304&days=4&aqi=no&alerts=no';
+    var noCityUrl = 'https://api.weatherapi.com/v1/forecast.json?key=695952c7d92b4120b1b141701210304&days=4&aqi=no&alerts=no';
     var searchCity = document.getElementById("searchId").value;
     var searchUrl = noCityUrl + "&q=" + searchCity ;
    
