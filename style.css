@@ -113,12 +113,22 @@
     color: #2A75BB;
   }
 
+  .modal{
+      background-color: #f4c921;
+  }
+
   .modal-title{
       color: #f4c921;
   }
 
   .modal-content{
       background-color: #3C5AA6;
+  }
+
+  .modal-body{
+      text-align: center;
+      font-weight: bold;
+      color: #f4c921;
   }
 
 
@@ -128,4 +138,18 @@
   .modal-li-4,
   .modal-li-5 {
       color: #f4c921;
+      list-style-type: none;
+      text-align: left;
+      padding: 5px;
+  }
+
+  .button-container{
+      display: flex;
+      justify-content: flex-end;
+  }
+
+  .btn-secondary{
+      background-color: #3C5AA6;
+      color: #f4c921;
+      padding: 5px;
   }
