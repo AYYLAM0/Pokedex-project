@@ -132,11 +132,7 @@ function getResults(data, search, selectBoxValue) {
             $(".modal-li-2").text("Effect: " + data.effect_changes[0].effect_entries[1].effect)
             $(".modal-li-3").text("Chance: " + data.effect_entries[1].effect)
             $(".modal-li-4").text("Bonus Effect: " + data.flavor_text_entries[0].flavor_text)
-            
-            
-            
         }
-        showModal()
         
         resultTitle.textContent = data.name
 
