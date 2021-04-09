@@ -70,6 +70,8 @@
 
   .weather-results{
       padding: 10px;
+      color: #144879;
+      font-weight: 480;
   }
 
   .results-container{
