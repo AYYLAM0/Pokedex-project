@@ -57,13 +57,13 @@ body {
   transform: scale(1.02);
 }
 
-.weather-button {
+.button {
   font-size: smaller;
   background-color: #2a75bb;
   color: #f4c921;
 }
 
-.weather-button:hover {
+.button:hover {
   background-color: #144879;
   transform: scale(1.02);
 }
