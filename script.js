@@ -126,10 +126,12 @@ function getResults(data, search, selectBoxValue) {
        
         function showModal() {
 
-            $('#myModal').modal("moves");
+            $('#myModal').modal("show");
             $(".modal-title").text(data.name)
-            $(".modal-img").attr('src', data.sprites.other['official-artwork'].front_default);
-            $(".modal-body").text("Type: " + data.types[0].type.name)
+            $(".modal-li-1").text("Generation: " + data.generation.name)
+            $(".modal-li-2").text("Effect: " + data.effect_changes[0].effect_entries[1].effect)
+            $(".modal-li-3").text("Chance: " + data.effect_entries[1].effect)
+            $(".modal-li-4").text("Bonus Effect: " + data.flavor_text_entries[0].flavor_text)
         }
         
         resultTitle.textContent = data.name
